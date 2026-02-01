@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# sync the bucket content to here
+
+if [ -z "$1" ]; then
+  echo "A bucket name is required."
+  exit 1
+fi
+
+BUCKET_NAME=$1
+
+aws s3 sync $BUCKET_NAME .
